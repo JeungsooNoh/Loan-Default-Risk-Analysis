@@ -98,14 +98,10 @@ It simulates real work done by analysts in credit risk, financial planning, or o
 
 ---
 
-## 9. Next Steps
 
-- Test alternative models (e.g., XGBoost) if needed
-- Improve class precision using threshold tuning or ensemble methods
-- Visualize model results (confusion matrix, ROC curve) for presentations
 
 ---
 
-## 10. Conclusion
+## 9. Conclusion
 
-With an AUC of 0.75 and strong recall on defaulters, this model provides meaningful predictive value while maintaining interpretability. It is suitable for showcasing applied risk modeling in a financial analyst context.
+With an AUC of 0.75 and strong recall on defaulters, this model provides meaningful predictive value while maintaining interpretability. It is suitable for showcasing applied risk modeling in a financial analyst context. 
