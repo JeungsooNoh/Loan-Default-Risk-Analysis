@@ -1,4 +1,3 @@
-
 # Loan Default Risk Analysis
 
 **Author**: Jeungsoo Noh  
@@ -14,7 +13,7 @@ This project develops a binary classification model to predict the risk of loan 
 
 ## 2. Data Summary
 
-- **Source**: LendingClub accepted loan dataset (2007–2018) https://www.kaggle.com/datasets/wordsforthewise/lending-club
+- **Source**: LendingClub accepted loan dataset (2007–2018)https://www.kaggle.com/datasets/wordsforthewise/lending-club
 - **Sample Size**: 5,000 loans
 - **Target Variable**: `loan_status`
   - Fully Paid → 0 (non-defaulter)
@@ -64,18 +63,29 @@ The model is particularly effective at capturing defaulters (66% recall), which 
 ## 6. Top Predictive Features
 
 ### Positive Impact (Higher Default Risk):
-- `int_rate`: Higher interest rate
-- `inq_last_6mths`: More credit inquiries
-- `open_acc`: Higher open accounts
-- `home_ownership_RENT`: Renting vs owning
-- `dti`: Debt-to-income ratio
+
+| Feature | Coefficient | Interpretation |
+|---------|-------------|----------------|
+| `int_rate` | **0.170** | Higher interest rates signal higher borrower risk. Often, high-risk borrowers are charged higher rates. |
+| `inq_last_6mths` | **0.043** | A greater number of credit inquiries in the past six months may reflect financial distress or a need for liquidity. |
+| `open_acc` | **0.040** | A higher number of open credit lines could indicate overextension. |
+| `home_ownership_RENT` | **0.033** | Renters may have more unstable housing or financial situations compared to homeowners. |
+| `dti` | **0.019** | A higher debt-to-income ratio reflects lower disposable income, increasing the likelihood of default. |
+| `purpose_debt_consolidation` | **0.014** | Borrowers seeking to consolidate debt may already be struggling with repayment, indicating elevated risk. |
+| `grade_D` | **0.013** | D-grade loans are typically riskier and carry a higher probability of default. |
+| `grade_B` | **0.010** | B-grade borrowers also pose moderate risk relative to top-tier borrowers. |
+| `term_ 60 months` | **0.009** | Longer loan terms often correlate with higher risk due to greater uncertainty over time. |
+| `sub_grade_C4` | **0.008** | Lower sub-grade loans like C4 are statistically more likely to default. |
 
 ### Negative Impact (Lower Default Risk):
-- `fico_range_low`: Higher credit scores
-- `sub_grade_A2/A3`: Strong credit
-- `purpose_credit_card/home_improvement`: Responsible loan purposes
-- `total_acc`: Richer credit history
-- `emp_length_10+ years`: Stable employment
+
+| Feature | Coefficient | Interpretation |
+|---------|-------------|----------------|
+| `fico_range_low` | **-0.004** | Higher credit scores correlate with lower default risk. |
+| `sub_grade_A2/A3` | **-0.006 / -0.003** | High sub-grade borrowers are historically safer. |
+| `purpose_credit_card/home_improvement` | **-0.006 / -0.005** | These purposes suggest structured financial planning or necessary spending, which reduces risk. |
+| `total_acc` | **-0.012** | A higher number of total accounts often signals long-standing and diverse credit history. |
+| `emp_length_10+ years` | **-0.007** | Longer employment tenure usually implies job stability, a protective factor. |
 
 ---
 
@@ -98,10 +108,15 @@ It simulates real work done by analysts in credit risk, financial planning, or o
 
 ---
 
+## 9. Potential Immprovement
 
+- Improve class precision using threshold tuning or ensemble methods
 
 ---
 
-## 9. Conclusion
+## 10. Conclusion
 
-With an AUC of 0.75 and strong recall on defaulters, this model provides meaningful predictive value while maintaining interpretability. It is suitable for showcasing applied risk modeling in a financial analyst context. 
+With an AUC of 0.75 and strong recall on defaulters, this model provides meaningful predictive value while maintaining interpretability. It is suitable for showcasing applied risk modeling in a financial analyst context.
+
+---
+
