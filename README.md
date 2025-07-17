@@ -14,7 +14,7 @@ This project develops a binary classification model to predict the risk of loan 
 
 ## 2. Data Summary
 
-- **Source**: LendingClub accepted loan dataset (2007–2018)
+- **Source**: LendingClub accepted loan dataset (2007–2018) https://www.kaggle.com/datasets/wordsforthewise/lending-club
 - **Sample Size**: 5,000 loans
 - **Target Variable**: `loan_status`
   - Fully Paid → 0 (non-defaulter)
